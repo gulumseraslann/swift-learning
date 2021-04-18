@@ -1,0 +1,132 @@
+import UIKit
+
+var str = "Hello world!"
+print(str)
+
+let repeatedArray = Array(repeating: "ty", count: 3)
+var cities = ["İzmir", "İstanbul"]
+print(cities[0])
+
+// Week 1 - Öğleden sonra
+
+// SET (unordered) - ordered yapısı da 6 nisanda yayınlanmış
+// set = mükerrer yapı olamaz, unordered
+var colors = Set<String>()
+var myColors: Set<String> = ["Mavi", "Siyah", "Yeşil", "Mavi"]
+
+// 3 yazacaktır
+myColors.count
+
+
+var animals: Set<String> = ["Kedi", "Jaguar", "Kartal", "Panda"]
+var cars: Set<String> = ["Kartal", "Bmw", "Panda", "Audi"]
+var myCars : Set<String> = ["Kartal","Panda"]
+
+// myCarsa eleman ekleme
+//myCars.insert("deneme")
+
+// Kesişim (Intersection)
+let intersect1 = animals.intersection(cars)
+let intersect2 = cars.intersection(animals)
+
+// Birleşim ( Union)
+let union1 = animals.union(cars)
+union1.count
+let union2 = cars.union(animals)
+
+// Fark (?) exclusiveOr = XOR
+let sd1 = animals.symmetricDifference(cars)
+let sd2 = cars.symmetricDifference(animals)
+
+let sub1 = animals.subtracting(cars)
+let sub2 = cars.subtracting(animals)
+
+// animals alt küme mi?
+let isSubSet1 = animals.isSubset(of: cars)
+let isSubSet2 = myCars.isSubset(of: cars)
+let isSubSet3 = myCars.isSubset(of: animals)
+
+// Dictionary (unordered) -- ordered dictionary de yayınlanmış
+// key-value
+// aslında javadaki map yapısı diyebiliriz bence
+
+var animals1 : Dictionary<String,String> = Dictionary<String,String>()
+var animals2 = [String: String]()
+var animals3 : [String:String] = [:]
+
+var animals4 : [String:String] = ["Karabaş":"Köpek", "Cici Kuş":"Papağan", "Limon":"Kedi"]
+animals4["Karabaş"] // Köpek yazacaktır
+animals4["Kedi"] // nil olacaktır
+
+for animal in animals4.values {
+    print(animal)
+}
+
+animals4.updateValue("Balık", forKey: "Limon")
+
+// value değiştirme
+animals4["Karabaş"] = "At"
+print(animals4)
+
+// Anyhashable
+let object: Set<AnyHashable> = [1, "deneme"]
+
+// Dictionary Anyhashable
+let description: [AnyHashable: Any] = [
+    42 : "an Int",
+    ["a", "b"] as Set : "a set ıf strings"
+]
+
+// print(description[42]) // optional yazar
+print(description[42]!) // optionaldan kurtulmak için forcelar
+
+// Variadic
+func sum2(w:Int, e:Int, m:Int, n:Int) -> Int {
+    return w + e
+}
+
+sum2(w: 2, e: 3, m:6, n:7)
+
+// burda doğan ihtiyaçlardan dolayı variadic parametre çıkmış
+
+func sum3(numbers:Int ...) -> Int {
+    return numbers.reduce(0, +)
+}
+
+sum3(numbers: 1,2,3,4,5) // (n*(n+1)) / 2
+
+// Inout -- normalde buna izin vermez value let değiştirelemez olarak biliyor inout kullanarak değiştirebiliriz
+func updateValue(value:inout Int) {
+    value += 1
+}
+
+
+// ornek
+func doubleInPlace(number: inout Int) {
+    number *= 2
+}
+
+var myNum = 10
+doubleInPlace(number: &myNum)
+print(myNum) // 20 yazacaktır
+
+// Closures (block, lambdas denk geliyor)
+// () -> () veya () -> Void veya (Int,Int) -> Int
+let merhaba = {
+    print("Merhaba")
+}
+
+merhaba() // Console'a Merhaba yazacaktır
+
+let add = {(x:Int, y:Int) -> Int in
+    return x + y
+}
+
+add(2,3) // 5 yazacaktır
+
+let divide = {(x:Int, y:Int) throws -> Int in
+    if y == 0 {
+        print("0 ile bölemezsiniz")
+    }
+    return x / y
+}
