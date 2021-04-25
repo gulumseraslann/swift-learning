@@ -13,6 +13,8 @@
 		07B5D99B26355FBA00022869 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 07B5D99926355FBA00022869 /* Main.storyboard */; };
 		07B5D99D26355FBB00022869 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 07B5D99C26355FBB00022869 /* Assets.xcassets */; };
 		07B5D9A026355FBB00022869 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 07B5D99E26355FBB00022869 /* LaunchScreen.storyboard */; };
+		07B5D9A826357EAA00022869 /* CitiesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07B5D9A726357EAA00022869 /* CitiesViewController.swift */; };
+		07B5D9AB263584E200022869 /* CityModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07B5D9AA263584E200022869 /* CityModel.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -24,6 +26,8 @@
 		07B5D99C26355FBB00022869 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		07B5D99F26355FBB00022869 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		07B5D9A126355FBB00022869 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		07B5D9A726357EAA00022869 /* CitiesViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CitiesViewController.swift; sourceTree = "<group>"; };
+		07B5D9AA263584E200022869 /* CityModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CityModel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -56,15 +60,25 @@
 		07B5D99226355FBA00022869 /* week2 */ = {
 			isa = PBXGroup;
 			children = (
+				07B5D9A9263584CF00022869 /* Model */,
 				07B5D99326355FBA00022869 /* AppDelegate.swift */,
 				07B5D99526355FBA00022869 /* SceneDelegate.swift */,
 				07B5D99726355FBA00022869 /* ViewController.swift */,
+				07B5D9A726357EAA00022869 /* CitiesViewController.swift */,
 				07B5D99926355FBA00022869 /* Main.storyboard */,
 				07B5D99C26355FBB00022869 /* Assets.xcassets */,
 				07B5D99E26355FBB00022869 /* LaunchScreen.storyboard */,
 				07B5D9A126355FBB00022869 /* Info.plist */,
 			);
 			path = week2;
+			sourceTree = "<group>";
+		};
+		07B5D9A9263584CF00022869 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				07B5D9AA263584E200022869 /* CityModel.swift */,
+			);
+			path = Model;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -138,7 +152,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				07B5D9AB263584E200022869 /* CityModel.swift in Sources */,
 				07B5D99826355FBA00022869 /* ViewController.swift in Sources */,
+				07B5D9A826357EAA00022869 /* CitiesViewController.swift in Sources */,
 				07B5D99426355FBA00022869 /* AppDelegate.swift in Sources */,
 				07B5D99626355FBA00022869 /* SceneDelegate.swift in Sources */,
 			);
